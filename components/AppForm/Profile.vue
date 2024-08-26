@@ -37,9 +37,9 @@
           </div>
         </div>
 
-        <!-- Photo URL Field -->
+        <!-- Photo URL Field (Re-added) -->
         <div class="flex-grow col-span-6 sm:col-span-3">
-          <label for="photo-url" class="block text-sm font-medium text-gray-700">Photo Url</label>
+          <label for="photo-url" class="block text-sm font-medium text-gray-700">Photo URL</label>
           <input
             type="text"
             name="photo-url"
@@ -62,7 +62,9 @@
             @input="$emit('update:email', $event.target.value)"
           />
         </div>
+
         
+
       </div>
     </div>
   </base-form-section>

@@ -36,16 +36,16 @@
           @click="publish"
           class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
         >
-          <span> Publish </span>
+          <span> Click to Publish </span>
           <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4" />
         </button>
         <a
-          href="https://github.com/tylerdipolito"
+          href="https://buy.stripe.com/00g7sw7i8g9d5gseVd"
           target="_blank"
           class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
         >
-          <span> Github </span>
-          <icon name="mdi:github" class="h-4 w-4" />
+          <span> Help us Grow </span>
+          <icon name="memory:account" class="h-4 w-4" />
         </a>
       </div>
     </div>
@@ -57,6 +57,7 @@
     >
       Made by Tyler
     </a>
+    
   </div>
 </template>
 
@@ -134,7 +135,7 @@ const publish = async () => {
   
   // Copy the URL to the clipboard
   await navigator.clipboard.writeText(url);
-  alert("Link copied to clipboard");
+  alert("Link is Copied, Open a New Browser and Paste");
 
   // Include the generated URL in the data to be sent to the webhook
   const payload = {
