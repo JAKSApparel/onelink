@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen grid grid-cols-3 divide-x">
+  <div class="h-screen grid grid-cols-1 md:grid-cols-3 divide-x">
     <div class="col-span-2 h-screen flex flex-col bg-slate-100">
       <div class="flex-1 overflow-y-auto p-8">
         <!-- Form Components for Profile and Social Links -->
@@ -49,7 +49,14 @@
         </a>
       </div>
     </div>
-    <app-form-preview :data="data" />
+    <!-- Hide preview on mobile using md:block -->
+    <div class="hidden md:flex justify-center items-center h-full p-4">
+      <div
+        class="h-[600px] w-[300px] overflow-y-auto rounded-[2rem] ring-8 ring-slate-800 overflow-hidden"
+      >
+        <app-form-preview :data="data" />
+      </div>
+    </div>
     <a
       href="https://tylerdipolito.com"
       target="_blank"
@@ -57,7 +64,6 @@
     >
       Made by Tyler
     </a>
-    
   </div>
 </template>
 
@@ -132,7 +138,7 @@ const prefillDemoData = () => {
 // Publish function to handle form submission, URL copying, and sending data to webhook
 const publish = async () => {
   const url = `${window.location.origin}/1?data=${encodeData(data.value)}`;
-  
+
   // Copy the URL to the clipboard
   await navigator.clipboard.writeText(url);
   alert("Link is Copied, Open a New Browser and Paste");
