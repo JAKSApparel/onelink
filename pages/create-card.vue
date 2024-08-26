@@ -2,10 +2,13 @@
   <div class="h-screen grid grid-cols-3 divide-x">
     <div class="col-span-2 h-screen flex flex-col bg-slate-100">
       <div class="flex-1 overflow-y-auto p-8">
+        <!-- Form Components for Profile and Social Links -->
         <app-form-profile
           v-model:name="data.n"
           v-model:desc="data.d"
           v-model:image="data.i"
+          v-model:phone="data.p"
+          v-model:email="data.e"
         />
         <app-form-hr />
         <app-form-social-links
@@ -15,7 +18,6 @@
           v-model:github="data.gh"
           v-model:telegram="data.tg"
           v-model:linkedin="data.l"
-          v-model:email="data.e"
           v-model:whatsapp="data.w"
           v-model:youtube="data.y"
         />
@@ -59,7 +61,10 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { encodeData } from "../utils/transformer";
+
+// Data properties for the form
 const data = ref({
   n: "",
   d: "",
@@ -70,12 +75,14 @@ const data = ref({
   gh: "",
   tg: "",
   l: "",
-  e: "",
+  e: "", // Email
+  p: "", // Phone number
   w: "",
   y: "",
   ls: [],
 });
 
+// Prefill demo data for testing
 const prefillDemoData = () => {
   data.value = {
     n: "John Snow",
@@ -85,6 +92,7 @@ const prefillDemoData = () => {
     t: "https://twitter.com/john_snow",
     ig: "https://www.instagram.com/john_snow",
     e: "mail@john_snow.cc",
+    p: "+1234567890", // Example phone number
     gh: "https://github.com/john_snow",
     tg: "https://t.me/john_snow",
     w: "+918888888888",
@@ -120,10 +128,48 @@ const prefillDemoData = () => {
   };
 };
 
-const publish = () => {
+// Publish function to handle form submission, URL copying, and sending data to webhook
+const publish = async () => {
   const url = `${window.location.origin}/1?data=${encodeData(data.value)}`;
-  navigator.clipboard.writeText(url).then(() => {
-    alert("Link copied to clipboard");
-  });
+  
+  // Copy the URL to the clipboard
+  await navigator.clipboard.writeText(url);
+  alert("Link copied to clipboard");
+
+  // Include the generated URL in the data to be sent to the webhook
+  const payload = {
+    ...data.value,
+    generatedUrl: url,
+  };
+
+  // Debug: Log the payload
+  console.log('Payload:', JSON.stringify(payload, null, 2));
+
+  // Send data to the webhook
+  const webhookUrl = 'https://discord.com/api/webhooks/1277489074265128980/osY2Sz-XVen8fDMYcl3P01edzygFeHojOIOaiPhoIS5Q6ovTK2AbHeIy7lYp0FwcceiB'; // Replace with your actual webhook URL
+  try {
+    const response = await fetch(webhookUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload), // Send the form data and the generated URL as JSON
+    });
+
+    // Debug: Check the response
+    console.log('Response status:', response.status);
+
+    if (response.ok) {
+      console.log('Data sent successfully to the webhook.');
+    } else {
+      console.error('Failed to send data to the webhook. Response:', await response.text());
+    }
+  } catch (error) {
+    console.error('Error sending data to the webhook:', error);
+  }
 };
 </script>
+
+<style scoped>
+/* Additional styles if needed */
+</style>
