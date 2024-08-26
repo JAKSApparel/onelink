@@ -86,9 +86,9 @@ const data = ref({
 // Prefill demo data for testing
 const prefillDemoData = () => {
   data.value = {
-    n: "Tyler Dipolito",
-    d: "I’m Tyler Dipolito, the king in the north. I know Nothing.",
-    i: "https://i.insider.com/56743fad72f2c12a008b6cc0",
+    n: "Chuck Norris",
+    d: "Knows Victorias Secret, can divide by 0, once killed 2 stones with 1 bird",
+    i: "https://utfs.io/f/7da93837-b35f-46c3-96e9-4c02068c77fc-wch5px.jpg",
     f: "https://www.facebook.com/john_snow",
     t: "https://twitter.com/john_snow",
     ig: "https://www.instagram.com/john_snow",
@@ -98,7 +98,7 @@ const prefillDemoData = () => {
     tg: "https://t.me/john_snow",
     w: "+918888888888",
     y: "https://youtube.com/@john_snow",
-    l: "https://linkedin.com/tylerdipolito",
+    l: "https://linkedin.com/chucknorris",
     ls: [
       {
         l: "My Website",
