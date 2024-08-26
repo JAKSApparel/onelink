@@ -70,6 +70,7 @@
             <option value="simple">Simple</option>
             <option value="modern">Modern</option>
             <option value="classic">Classic</option>
+            <option value="dark">Dark</option>
             <!-- Add more templates here -->
           </select>
         </div>
