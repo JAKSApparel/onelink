@@ -85,8 +85,8 @@ const data = ref({
 // Prefill demo data for testing
 const prefillDemoData = () => {
   data.value = {
-    n: "John Snow",
-    d: "I’m John Snow, the king in the north. I know Nothing.",
+    n: "Tyler Dipolito",
+    d: "I’m Tyler Dipolito, the king in the north. I know Nothing.",
     i: "https://i.insider.com/56743fad72f2c12a008b6cc0",
     f: "https://www.facebook.com/john_snow",
     t: "https://twitter.com/john_snow",
@@ -97,7 +97,7 @@ const prefillDemoData = () => {
     tg: "https://t.me/john_snow",
     w: "+918888888888",
     y: "https://youtube.com/@john_snow",
-    l: "https://linkedin.com/john_snow",
+    l: "https://linkedin.com/tylerdipolito",
     ls: [
       {
         l: "My Website",

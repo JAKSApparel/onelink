@@ -1,81 +1,82 @@
 <template>
-  <main class="p-4 bg-white h-full w-full space-y-8 pt-12 max-w-lg mx-auto">
+  <main class="p-6 bg-gray-50 h-full w-full space-y-10 pt-12 max-w-md mx-auto rounded-xl shadow-lg">
     <div class="text-center">
       <div
         v-if="acc.i"
-        class="h-20 w-20 rounded-full overflow-hidden ring ring-slate-200 mx-auto"
+        class="h-24 w-24 rounded-full overflow-hidden ring-4 ring-indigo-500 mx-auto"
       >
         <img :src="acc.i" alt="name" class="h-full w-full object-cover" />
       </div>
-      <h1 v-if="acc.n" class="text-2xl font-bold mt-4 text-slate-800">
+      <h1 v-if="acc.n" class="text-3xl font-semibold mt-5 text-gray-900">
         {{ acc.n }}
       </h1>
-      <p v-if="acc.d" class="text-sm mt-2 text-slate-600">
+      <p v-if="acc.d" class="text-base mt-2 text-gray-700">
         {{ acc.d }}
       </p>
     </div>
     <div
       v-if="!allSocialLinksAreEmpty"
-      class="flex items-center justify-center flex-wrap"
+      class="flex items-center justify-center flex-wrap space-x-4 mt-6"
     >
-      <span v-if="acc.f" class="p-1">
-        <a :href="formatUrl(acc.f)" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:facebook-logo-duotone" class="h-6 w-6" />
+      <span v-if="acc.f" class="p-2 bg-indigo-100 rounded-full">
+        <a :href="formatUrl(acc.f)" target="_blank" rel="noopener noreferrer">
+          <icon name="ph:facebook-logo-duotone" class="h-8 w-8 text-indigo-600" />
         </a>
       </span>
-      <span v-if="acc.t" class="p-1">
-        <a :href="formatUrl(acc.t)" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:twitter-logo-duotone" class="h-6 w-6" />
+      <span v-if="acc.t" class="p-2 bg-indigo-100 rounded-full">
+        <a :href="formatUrl(acc.t)" target="_blank" rel="noopener noreferrer">
+          <icon name="ph:twitter-logo-duotone" class="h-8 w-8 text-indigo-600" />
         </a>
       </span>
-      <span v-if="acc.ig" class="p-1">
-        <a :href="formatUrl(acc.ig)" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:instagram-logo-duotone" class="h-6 w-6" />
+      <span v-if="acc.ig" class="p-2 bg-indigo-100 rounded-full">
+        <a :href="formatUrl(acc.ig)" target="_blank" rel="noopener noreferrer">
+          <icon name="ph:instagram-logo-duotone" class="h-8 w-8 text-indigo-600" />
         </a>
       </span>
-      <span v-if="acc.m" class="p-1">
-        <a :href="formatUrl(acc.m)" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:envelope-duotone" class="h-6 w-6" />
+      <span v-if="acc.m" class="p-2 bg-indigo-100 rounded-full">
+        <a :href="formatUrl(acc.m)" target="_blank" rel="noopener noreferrer">
+          <icon name="ph:envelope-duotone" class="h-8 w-8 text-indigo-600" />
         </a>
       </span>
-      <span v-if="acc.tg" class="p-1">
-        <a :href="formatUrl(acc.tg)" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:telegram-logo-duotone" class="h-6 w-6" />
+      <span v-if="acc.tg" class="p-2 bg-indigo-100 rounded-full">
+        <a :href="formatUrl(acc.tg)" target="_blank" rel="noopener noreferrer">
+          <icon name="ph:telegram-logo-duotone" class="h-8 w-8 text-indigo-600" />
         </a>
       </span>
-      <span v-if="acc.w" class="p-1">
-        <a :href="`https://wa.me/${acc.w}`" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:whatsapp-logo-duotone" class="h-6 w-6" />
+      <span v-if="acc.w" class="p-2 bg-indigo-100 rounded-full">
+        <a :href="`https://wa.me/${acc.w}`" target="_blank" rel="noopener noreferrer">
+          <icon name="ph:whatsapp-logo-duotone" class="h-8 w-8 text-indigo-600" />
         </a>
       </span>
-      <span v-if="acc.y" class="p-1">
-        <a :href="formatUrl(acc.y)" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:youtube-logo-duotone" class="h-6 w-6" />
+      <span v-if="acc.y" class="p-2 bg-indigo-100 rounded-full">
+        <a :href="formatUrl(acc.y)" target="_blank" rel="noopener noreferrer">
+          <icon name="ph:youtube-logo-duotone" class="h-8 w-8 text-indigo-600" />
         </a>
       </span>
-      <span v-if="acc.e" class="p-1">
-        <a :href="`mailto:${acc.e}`" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:envelope-duotone" class="h-6 w-6" />
+      <span v-if="acc.e" class="p-2 bg-indigo-100 rounded-full">
+        <a :href="`mailto:${acc.e}`" target="_blank" rel="noopener noreferrer">
+          <icon name="ph:envelope-duotone" class="h-8 w-8 text-indigo-600" />
         </a>
       </span>
-      <span v-if="acc.gh" class="p-1">
-        <a :href="formatUrl(acc.gh)" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:github-logo-duotone" class="h-6 w-6" />
+      <span v-if="acc.gh" class="p-2 bg-indigo-100 rounded-full">
+        <a :href="formatUrl(acc.gh)" target="_blank" rel="noopener noreferrer">
+          <icon name="ph:github-logo-duotone" class="h-8 w-8 text-indigo-600" />
         </a>
       </span>
-      <span v-if="acc.l" class="p-1">
-        <a :href="formatUrl(acc.l)" target="_blank" rel="noopener | noreferrer">
-          <icon name="ph:linkedin-logo-duotone" class="h-6 w-6" />
+      <span v-if="acc.l" class="p-2 bg-indigo-100 rounded-full">
+        <a :href="formatUrl(acc.l)" target="_blank" rel="noopener noreferrer">
+          <icon name="ph:linkedin-logo-duotone" class="h-8 w-8 text-indigo-600" />
         </a>
       </span>
     </div>
-    <ul class="space-y-2">
+    <ul class="space-y-4">
       <ExternalLink
         v-for="(link, id) in acc.ls"
         :label="link.l"
         :icon="link.i"
         :url="formatUrl(link.u)"
         :key="id"
+        class="block p-4 bg-indigo-300 rounded-md shadow-sm hover:bg-indigo-500"
       />
     </ul>
   </main>

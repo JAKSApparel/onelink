@@ -62,18 +62,6 @@
             @input="$emit('update:email', $event.target.value)"
           />
         </div>
-
-        <!-- Template Selection Field -->
-        <div class="flex-grow col-span-6 sm:col-span-3">
-          <label for="template" class="block text-sm font-medium text-gray-700">Choose a Template</label>
-          <select v-model="selectedTemplate" id="template" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-            <option value="simple">Simple</option>
-            <option value="modern">Modern</option>
-            <option value="classic">Classic</option>
-            <option value="dark">Dark</option>
-            <!-- Add more templates here -->
-          </select>
-        </div>
         
       </div>
     </div>
@@ -81,11 +69,5 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
 const props = defineProps(["name", "desc", "image", "phone", "email"]);
-
-// Template selection state
-const selectedTemplate = ref('simple'); // Default template
-
 </script>
