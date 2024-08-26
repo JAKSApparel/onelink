@@ -6,7 +6,7 @@
     <div class="shadow sm:overflow-hidden sm:rounded-md">
       <div class="grid grid-cols-2 gap-8 bg-white px-4 py-5 sm:p-6">
         <div>
-          <label for="facebook" class="block text-sm font-medium text-gray-700"
+          <label for="facebook" class="block text-lg font-bold text-gray-800"
             >Facebook</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
@@ -21,13 +21,13 @@
               id="facebook"
               :value="facebook"
               @input="$emit('update:facebook', $event.target.value)"
-              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
               placeholder="https://fb.com/elonmusk"
             />
           </div>
         </div>
         <div>
-          <label for="twitter" class="block text-sm font-medium text-gray-700"
+          <label for="twitter" class="block text-lg font-bold text-gray-800"
             >Twitter</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
@@ -42,13 +42,13 @@
               id="twitter"
               :value="twitter"
               @input="$emit('update:twitter', $event.target.value)"
-              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
               placeholder="https://twitter.com/elonmusk"
             />
           </div>
         </div>
         <div>
-          <label for="instagram" class="block text-sm font-medium text-gray-700"
+          <label for="instagram" class="block text-lg font-bold text-gray-800"
             >Instagram</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
@@ -63,13 +63,13 @@
               id="instagram"
               :value="instagram"
               @input="$emit('update:instagram', $event.target.value)"
-              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
               placeholder="https://instagram.com/elonmusk"
             />
           </div>
         </div>
         <div>
-          <label for="instagram" class="block text-sm font-medium text-gray-700"
+          <label for="github" class="block text-lg font-bold text-gray-800"
             >Github</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
@@ -84,13 +84,13 @@
               id="github"
               :value="github"
               @input="$emit('update:github', $event.target.value)"
-              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
               placeholder="https://github.com/elonmusk"
             />
           </div>
         </div>
         <div>
-          <label for="instagram" class="block text-sm font-medium text-gray-700"
+          <label for="telegram" class="block text-lg font-bold text-gray-800"
             >Telegram</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
@@ -105,13 +105,13 @@
               id="telegram"
               :value="telegram"
               @input="$emit('update:telegram', $event.target.value)"
-              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
               placeholder="https://t.me/elonmusk"
             />
           </div>
         </div>
         <div>
-          <label for="instagram" class="block text-sm font-medium text-gray-700"
+          <label for="linkedin" class="block text-lg font-bold text-gray-800"
             >Linkedin</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
@@ -126,13 +126,13 @@
               id="linkedin"
               :value="linkedin"
               @input="$emit('update:linkedin', $event.target.value)"
-              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
               placeholder="https://linkedin.com/elonmusk"
             />
           </div>
         </div>
         <div>
-          <label for="instagram" class="block text-sm font-medium text-gray-700"
+          <label for="email" class="block text-lg font-bold text-gray-800"
             >Email</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
@@ -147,13 +147,13 @@
               id="email"
               :value="email"
               @input="$emit('update:email', $event.target.value)"
-              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
               placeholder="elonmusk@geemail.com"
             />
           </div>
         </div>
         <div>
-          <label for="instagram" class="block text-sm font-medium text-gray-700"
+          <label for="youtube" class="block text-lg font-bold text-gray-800"
             >Youtube</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
@@ -168,13 +168,13 @@
               id="youtube"
               :value="youtube"
               @input="$emit('update:youtube', $event.target.value)"
-              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
               placeholder="https://youtube.com/elonmusk"
             />
           </div>
         </div>
         <div>
-          <label for="instagram" class="block text-sm font-medium text-gray-700"
+          <label for="whatsapp" class="block text-lg font-bold text-gray-800"
             >Whatsapp</label
           >
           <div class="mt-1 flex rounded-md shadow-sm">
@@ -189,7 +189,7 @@
               id="whatsapp"
               :value="whatsapp"
               @input="$emit('update:whatsapp', $event.target.value)"
-              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+              class="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-gray-900"
               placeholder="+9190000000000"
             />
           </div>
@@ -198,6 +198,7 @@
     </div>
   </base-form-section>
 </template>
+
 <script setup>
 const props = defineProps([
   "facebook",

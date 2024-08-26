@@ -1,34 +1,38 @@
 <template>
   <div class="h-screen flex flex-col md:flex-row bg-gradient-to-r from-purple-500 to-blue-500 text-white">
+    <!-- Form Section -->
     <div class="flex-1 overflow-y-auto p-8">
-      <!-- Form Components for Profile and Social Links -->
-      <app-form-profile
-        v-model:name="data.n"
-        v-model:desc="data.d"
-        v-model:image="data.i"
-        v-model:phone="data.p"
-        v-model:email="data.e"
-      />
-      <app-form-hr />
-      <app-form-social-links
-        v-model:facebook="data.f"
-        v-model:twitter="data.t"
-        v-model:instagram="data.ig"
-        v-model:github="data.gh"
-        v-model:telegram="data.tg"
-        v-model:linkedin="data.l"
-        v-model:whatsapp="data.w"
-        v-model:youtube="data.y"
-      />
-      <app-form-hr />
-      <app-form-links v-model="data.ls" />
+      <div class="max-h-screen overflow-y-auto space-y-6">
+        <!-- Form Components for Profile and Social Links -->
+        <app-form-profile
+          v-model:name="data.n"
+          v-model:desc="data.d"
+          v-model:image="data.i"
+          v-model:phone="data.p"
+          v-model:email="data.e"
+        />
+        <app-form-hr />
+        <app-form-social-links
+          v-model:facebook="data.f"
+          v-model:twitter="data.t"
+          v-model:instagram="data.ig"
+          v-model:github="data.gh"
+          v-model:telegram="data.tg"
+          v-model:linkedin="data.l"
+          v-model:whatsapp="data.w"
+          v-model:youtube="data.y"
+        />
+        <app-form-hr />
+        <app-form-links v-model="data.ls" />
+      </div>
     </div>
 
+    <!-- Preview Section -->
     <div class="flex-none w-full md:w-96 p-4 md:p-8 bg-white text-slate-700">
       <div class="flex flex-col items-center">
         <!-- Reduced the size of the card display -->
-        <div class="h-[500px] w-[230px] overflow-y-auto rounded-[2rem] ring-4 ring-slate-800 overflow-hidden">
-          <app-form-preview :data="data" />
+        <div class="h-[450px] w-[250px] md:h-[600px] md:w-[300px] overflow-y-auto rounded-[2rem] ring-4 ring-slate-800 overflow-hidden">
+          <templates-simple :acc="data" />
         </div>
         <!-- Buttons positioned under the card -->
         <div class="space-y-2 mt-4 w-full">

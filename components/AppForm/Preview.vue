@@ -1,12 +1,13 @@
 <template>
- <div class="hidden md:grid place-items-center">
+  <div class="flex justify-center items-center h-full">
     <div
-      class="h-[729px] w-[340px] overflow-y-auto rounded-[3rem] ring-8 ring-slate-800 overflow-hidden"
+      class="h-[60vh] w-[80vw] md:h-[729px] md:w-[340px] overflow-y-auto rounded-[2rem] ring-8 ring-slate-800 overflow-hidden"
     >
       <templates-simple :acc="data" />
     </div>
   </div>
 </template>
+
 <script setup>
 const props = defineProps({
   data: {
@@ -15,4 +16,5 @@ const props = defineProps({
   },
 });
 </script>
+
 <style scoped></style>
