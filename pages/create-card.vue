@@ -1,7 +1,8 @@
 <template>
-  <div class="h-screen grid grid-cols-3 divide-x">
-    <div class="col-span-2 h-screen flex flex-col bg-slate-100">
-      <div class="flex-1 overflow-y-auto p-8">
+  <div class="h-screen flex flex-col md:flex-row bg-gradient-to-r from-purple-500 to-blue-500 text-white">
+    <!-- Form Section -->
+    <div class="flex-1 overflow-y-auto p-8">
+      <div class="max-h-screen overflow-y-auto space-y-6">
         <!-- Form Components for Profile and Social Links -->
         <app-form-profile
           v-model:name="data.n"
@@ -24,40 +25,47 @@
         <app-form-hr />
         <app-form-links v-model="data.ls" />
       </div>
-      <div class="border-t bg-white flex items-center">
-        <button
-          @click="prefillDemoData"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
-        >
-          <span> Add demo data </span>
-          <icon name="mdi:code-json" class="h-4 w-4" />
-        </button>
-        <button
-          @click="publish"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
-        >
-          <span> Click to Publish </span>
-          <icon name="ph:paper-plane-tilt-bold" class="h-4 w-4" />
-        </button>
-        <a
-          href="https://buy.stripe.com/00g7sw7i8g9d5gseVd"
-          target="_blank"
-          class="h-12 flex items-center space-x-2 px-4 border-r text-xs font-medium bg-white text-slate-700"
-        >
-          <span> Help us Grow </span>
-          <icon name="memory:account" class="h-4 w-4" />
-        </a>
+    </div>
+
+    <!-- Preview Section -->
+    <div class="flex-none w-full md:w-96 p-4 md:p-8 bg-white text-slate-700">
+      <div class="flex flex-col items-center">
+        <!-- Reduced the size of the card display -->
+        <div class="h-[450px] w-[250px] md:h-[600px] md:w-[300px] overflow-y-auto rounded-[2rem] ring-4 ring-slate-800 overflow-hidden">
+          <templates-simple :acc="data" />
+        </div>
+        <!-- Buttons positioned under the card -->
+        <div class="space-y-2 mt-4 w-full">
+          <button
+            @click="prefillDemoData"
+            class="w-full px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold shadow-md hover:bg-blue-700 transition"
+          >
+            Add Demo Data
+          </button>
+          <button
+            @click="publish"
+            class="w-full px-4 py-3 bg-green-500 text-white rounded-lg font-semibold shadow-md hover:bg-green-600 transition"
+          >
+            Click to Publish
+          </button>
+          <a
+            href="https://buy.stripe.com/00g7sw7i8g9d5gseVd"
+            target="_blank"
+            class="w-full inline-block px-4 py-3 bg-yellow-400 text-gray-800 rounded-lg font-semibold shadow-md hover:bg-yellow-500 transition text-center"
+          >
+            Help Us Grow
+          </a>
+        </div>
       </div>
     </div>
-    <app-form-preview :data="data" />
+
     <a
       href="https://tylerdipolito.com"
       target="_blank"
-      class="absolute bottom-0 right-0 bg-white rounded-tl-lg shadow px-4 py-1 font-medium text-sm text-gray-500"
+      class="absolute bottom-0 left-0 ml-4 mb-16 text-sm font-medium text-gray-300 hover:text-gray-100 transition"
     >
       Made by Tyler
     </a>
-    
   </div>
 </template>
 
@@ -132,7 +140,7 @@ const prefillDemoData = () => {
 // Publish function to handle form submission, URL copying, and sending data to webhook
 const publish = async () => {
   const url = `${window.location.origin}/1?data=${encodeData(data.value)}`;
-  
+
   // Copy the URL to the clipboard
   await navigator.clipboard.writeText(url);
   alert("Link is Copied, Open a New Browser and Paste");
